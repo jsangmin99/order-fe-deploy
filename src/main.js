@@ -6,9 +6,11 @@ import App from './App.vue'
 // src/router/index.js 에서 export한 router를 import 한다.
 import router from '@/router/index.js'
 import vuetify from "@/plugins/vuetify";
+import '@mdi/font/css/materialdesignicons.css'
 
 // createApp(App).mount('#app')
 const app = createApp(App)
+
 app.use(router);
 app.use(vuetify);
 

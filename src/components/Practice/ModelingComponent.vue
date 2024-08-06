@@ -42,6 +42,9 @@ export default{
     }
 
   },
+  created() {
+    alert("Create 함수 호출");
+  },
   methods: {
     cancel() {
       this.dialog = true;
