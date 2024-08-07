@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-row>
+    <v-row justify="center">
       <v-col>
         <v-card>
           <v-card-title class="text-center text-h5">
@@ -8,8 +8,9 @@
           </v-card-title>
           <v-card-text>
             <v-data-table
-              :headers="tableHeaders"
-              :items="memberList"
+                :headers="tableHeaders"
+                :items="memberList"
+                cell-class="text-center"
             >
 
             </v-data-table>
@@ -27,20 +28,28 @@ export default {
   data() {
     return {
       tableHeaders: [
-        { title:'ID', key:'id',align:'start'},
-        { title:'이름', key:'name',align:'start'},
-        { title:'이메일', key:'email',align:'start'}
+        {title: 'I D', key: 'id', align: 'center'},
+        {title: '이 름', key: 'name', align: 'center'},
+        {title: '이메일', key: 'email', align: 'center'},
+        {title: '주문 수량', key: 'orderCount', align:'center'}
       ],
       memberList: []
     }
   },
   async created() {
-    const token = localStorage.getItem('token');
-    //{"headers" : {"{Authorization" : `Bearer ${token}`, "Content-Type" : "application/json"}}
-    const headers = {Authorization: `Bearer ${token}`};
-    const response = await axios.get(`${process.env.VUE_APP_API_BASE_URI}`+'/member/list', {headers});
-    this.memberList = response.data.result.content;
+    // const token = localStorage.getItem('token');
+    // //{"headers" : {"{Authorization" : `Bearer ${token}`, "Content-Type" : "application/json"}}
+    // const headers = {Authorization: `Bearer ${token}`};
+    // const response = await axios.get(`${process.env.VUE_APP_API_BASE_URI}`+'/member/list', {headers})member;
+    try {
+      const response = await axios.get(`${process.env.VUE_APP_API_BASE_URI}/member/list`);
+      this.memberList = response.data.result.content;
+    } catch (e) {
+      console.log(e)
+    }
+
 
   }
 }
 </script>
+
