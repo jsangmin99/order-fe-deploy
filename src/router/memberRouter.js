@@ -19,6 +19,11 @@ export const memberRouter = [
         path: '/member/list',
         name: 'memberList',
         component: MemberList
+    },
+    {
+        path: '/mypage',
+        name: 'myPage',
+        component: () => import('@/views/member/MyPage.vue')
     }
     // {
     //     path: '/member/list',
