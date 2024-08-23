@@ -25,6 +25,6 @@ jobs:
         working-directory: .
         run: npm install
 # 4. npm build
-      - name: npm buildwor
+      - name: npm buildwer
         working-directory: .
-        run: npm build
+        run: npm run build
