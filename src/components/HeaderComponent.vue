@@ -11,7 +11,7 @@
         </v-col>
 
         <v-col class="text-center">
-          <v-btn :to="{path:'/'}">짱구네 가게</v-btn>
+          <v-btn :to="{path:'/'}">피카네 가게</v-btn>
         </v-col>
 
         <v-col class="d-flex justify-end">

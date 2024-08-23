@@ -4,7 +4,7 @@ name: deploy to aws s3
 on:
   push:
     branches:
-      - main
+      - dev
 # 워크플로우는 하나 이상의 작업(job)으로 구성, 여기서는 하나의 작업만을 정의 (job의 이름 은 사용자 맘대로)
 jobs:
   build-and-deploy:
